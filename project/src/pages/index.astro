@@ -1,0 +1,135 @@
+---
+import Layout from '../layouts/Layout.astro';
+import '@fontsource/playfair-display';
+import '@fontsource/inter';
+---
+
+<Layout>
+  <main class="font-inter">
+    <!-- Hero Section -->
+    <section class="relative h-screen">
+      <div class="absolute inset-0 bg-gradient-to-r from-jet-blue/90 to-jet-blue/70">
+        <img 
+          src="https://images.unsplash.com/photo-1540962351504-03099e0a754b?auto=format&fit=crop&q=80" 
+          alt="Private Jet" 
+          class="w-full h-full object-cover mix-blend-overlay"
+        />
+      </div>
+      <div class="relative z-10 h-full flex flex-col justify-center items-center text-white px-4">
+        <h1 class="font-playfair text-5xl md:text-7xl text-center mb-6">
+          Elevate Your Travel Experience
+        </h1>
+        <p class="text-xl md:text-2xl text-center max-w-3xl mb-8">
+          Access a global network of 10,000 private jets across 40,000 destinations
+        </p>
+        <a 
+          href="https://chartervilliersjets.com" 
+          class="bg-jet-gold text-jet-blue font-semibold px-8 py-4 rounded-full hover:bg-white transition duration-300"
+        >
+          Request a Quote
+        </a>
+      </div>
+    </section>
+
+    <!-- Benefits Section -->
+    <section class="py-20 px-4 bg-white">
+      <div class="max-w-7xl mx-auto">
+        <h2 class="font-playfair text-4xl md:text-5xl text-center text-jet-blue mb-16">
+          Why Choose Villiers Jets
+        </h2>
+        <div class="grid md:grid-cols-3 gap-12">
+          {[
+            {
+              title: "Time Efficiency",
+              description: "Skip the queues and arrive minutes before departure",
+              icon: "⏱️"
+            },
+            {
+              title: "Global Access",
+              description: "Reach 40,000 destinations worldwide",
+              icon: "🌍"
+            },
+            {
+              title: "Ultimate Privacy",
+              description: "Experience unparalleled exclusivity",
+              icon: "🔒"
+            }
+          ].map(benefit => (
+            <div class="text-center">
+              <div class="text-4xl mb-4">{benefit.icon}</div>
+              <h3 class="font-playfair text-2xl text-jet-blue mb-3">{benefit.title}</h3>
+              <p class="text-gray-600">{benefit.description}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <!-- Services Section -->
+    <section class="py-20 px-4 bg-gray-50">
+      <div class="max-w-7xl mx-auto">
+        <h2 class="font-playfair text-4xl md:text-5xl text-center text-jet-blue mb-16">
+          Premium Services
+        </h2>
+        <div class="grid md:grid-cols-2 gap-12">
+          {[
+            {
+              title: "Business Travel",
+              description: "Maximize productivity with flexible schedules and onboard workspace",
+              image: "https://images.unsplash.com/photo-1540962351504-03099e0a754b?auto=format&fit=crop&q=80"
+            },
+            {
+              title: "Family & Pet Travel",
+              description: "Travel comfortably with loved ones and pets in the cabin",
+              image: "https://images.unsplash.com/photo-1583623733237-4d5764a9dc82?auto=format&fit=crop&q=80"
+            }
+          ].map(service => (
+            <div class="bg-white rounded-lg overflow-hidden shadow-lg">
+              <img 
+                src={service.image} 
+                alt={service.title}
+                class="w-full h-64 object-cover"
+              />
+              <div class="p-8">
+                <h3 class="font-playfair text-2xl text-jet-blue mb-4">{service.title}</h3>
+                <p class="text-gray-600 mb-6">{service.description}</p>
+                <a 
+                  href="https://chartervilliersjets.com" 
+                  class="text-jet-blue font-semibold hover:text-jet-gold transition duration-300"
+                >
+                  Learn More →
+                </a>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="py-20 px-4 bg-jet-blue text-white">
+      <div class="max-w-4xl mx-auto text-center">
+        <h2 class="font-playfair text-4xl md:text-5xl mb-8">
+          Ready to Experience Luxury Travel?
+        </h2>
+        <p class="text-xl mb-12">
+          Join the elite community of Villiers Jets clients and transform your travel experience
+        </p>
+        <div class="flex flex-col md:flex-row gap-6 justify-center">
+          <a 
+            href="https://chartervilliersjets.com" 
+            class="bg-jet-gold text-jet-blue font-semibold px-8 py-4 rounded-full hover:bg-white transition duration-300"
+          >
+            Request a Quote
+          </a>
+          <a 
+            href="https://chartervilliersjets.com" 
+            class="border-2 border-white text-white font-semibold px-8 py-4 rounded-full hover:bg-white hover:text-jet-blue transition duration-300"
+          >
+            Explore Services
+          </a>
+        </div>
+      </div>
+    </section>
+  </main>
+</Layout>
